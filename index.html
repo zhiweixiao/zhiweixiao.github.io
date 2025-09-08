@@ -1,14 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to My Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 300px;
+            background: white;
+            padding: 40px 30px;
+            border-right: 1px solid #e0e0e0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-photo::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #999;
+        }
+
+        .profile-photo::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 80px;
+            background-color: #999;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .sidebar h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .sidebar-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .contact-icon {
+            margin-right: 12px;
+            width: 16px;
+            min-width: 16px;
+            text-align: center;
+            margin-top: 2px;
+        }
+
+        .main-content {
+            margin-left: 300px;
+            padding: 40px 60px;
+            flex: 1;
+            background: white;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            font-size: 20px;
+            color: #34495e;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #555;
+        }
+
+        .education-item, .publication-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .education-item h4, .publication-item h4 {
+            color: #2c3e50;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .education-item .institution, .publication-item .venue {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .education-item .year, .publication-item .year {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .publication-item .authors {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 30px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Zhiwei Xiao</h1>
-  <h2>Hello, I'm Zhiwei! I received my Bachelor of Science degree from the University of Michigan, currently working on my PhD in Statistics at UC Berkeley, as well as building my personal website!</h2>
-  <p>My CV and headshot coming soon! Got classes to catch up on right now :)) </p>
-  <p>Contact me at <span style="color: red;">xzhiwei@berkeley.edu</span> to discuss job opportunities, collaborations, movies, music, and whatever!</p> 
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-photo"></div>
+            <h1>Zhiwei Xiao</h1>
+          
+            
+            <ul class="contact-info">
+                <li><span class="contact-icon">📍</span>Berkeley, CA</li>
+                <li><span class="contact-icon">🏫</span>University of California, Berkeley</li>
+                <li><span class="contact-icon">📧</span><a href="mailto:xzhiwei@berkeley.edu">xzhiwei@berkeley.edu</a></li>
+                <li><span class="contact-icon">🎓</span><a href="https://scholar.google.com/citations?user=N54M7z4AAAAJ&hl=en&authuser=2">Google Scholar</a></li>
+                <li><span class="contact-icon">💼</span><a href="https://www.linkedin.com/in/zhiwei-xiao-8069111b3/">LinkedIn</a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <section class="section">
+                <h2>About Me</h2>
+                <p>
+                    Welcome to my personal website! I'm Zhiwei, a third year PhD student in Statistics at UC Berkeley. 
+                    My research interests lie in machine learning, causal inference, and biostatistics. In my free time, I love to go on resturant hunts, working out, and just enjoying the nature :))
+                <p>
+                    Feel free to reach out to me via email if you'd like to collaborate or discuss career opportunities!
+            </section>
+
+            <section class="section">
+                <h2>Education</h2>
+                
+                <div class="education-item">
+                    <h4>PhD in Statistics</h4>
+                    <div class="institution">Univeristy of California, Berkeley</div>
+                    <div class="year">2023 - Current</div>
+                     <p>Advisor: Elizabeth Purdom, Samuel D. Pimentel<p>
+                </div>
+                
+
+                <div class="education-item">
+                    <h4>BS in Statistics & Mathematics</h4>
+                    <div class="institution">University of Michigan, Ann Arbor</div>
+                    <div class="year">2018 - 2021</div>
+                    <p>High Distinction</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Publications</h2>
+                  <h3>Preprints & Working Papers</h3>
+                
+                <div class="publication-item">
+                    <h4>Matched Randomization Inference for Estimating Spillover Effects under Two-Stage Designs</h4>
+                    <div class="authors"><strong>Zhiwei Xiao</strong>, Samuel D. Pimentel</div>
+                    <p>Manuscript in progress</p>
+                </div>
+              
+              <div class="publication-item">
+                    <h4>A Statistical Framework for Interpretable Disease Classification</h4>
+                    <div class="authors"><strong>Zhiwei Xiao</strong>, et al.</div>
+                    <p>Manuscript in progress</p>
+                </div>
+              
+                <h3>Journal Articles</h3>
+                
+                <div class="publication-item">
+                    <h4>Regionally distinct progenitor cells in the lower airway give rise to neuroendocrine and multiciliated cells in the developing human lung</h4>
+                    <div class="authors">Ansley S Conchola, Tristan Frum,<strong>Zhiwei Xiao</strong>, et al.</div>
+                    <div class="venue">Proceedings of the National Academy of Sciences, 2023</div>
+                    <a href="#">[PDF]</a> | <a href="#">[DOI]</a>
+                </div>
+                
+                <div class="publication-item">
+                    <h4>Stable iPSC-derived NKX2-1+ lung bud tip progenitor organoids give rise to airway and alveolar cell types</h4>
+                  <div class="authors">Renee FC Hein, Ansley S Conchola, Alexis S Fine, <strong>Zhiwei Xiao</strong>, et al.</div>
+                    <div class="venue">Development, 2022</div>
+                    <a href="#">[PDF]</a> | <a href="#">[DOI]</a>
+                </div>
+                
+                
+              
+            </section>
+        </main>
+    </div>
 </body>
 </html>
