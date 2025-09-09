@@ -34,42 +34,20 @@
         }
 
         .profile-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background-color: #ddd;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            position: relative;
-            overflow: hidden;
-        }
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    background-color: #ddd;
+}
 
-        .profile-photo::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #999;
-        }
-
-        .profile-photo::after {
-            content: '';
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 80px;
-            background-color: #999;
-            border-radius: 50px 50px 0 0;
-        }
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
 
         .sidebar h1 {
             text-align: center;
@@ -201,7 +179,9 @@
 <body>
     <div class="container">
         <aside class="sidebar">
-            <div class="profile-photo"></div>
+            <div class="profile-photo">
+    <img src="IMG_0312.jpeg" alt="Zhiwei Xiao" />
+</div>
             <h1>Zhiwei Xiao</h1>
           
             
